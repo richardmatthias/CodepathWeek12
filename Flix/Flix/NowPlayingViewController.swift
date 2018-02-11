@@ -31,13 +31,20 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource {
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell=sender as!MovieCell
+        let indexPath=FlixTable.indexPath(for: cell)
+        let movie=movies[(indexPath?.row)!]
+        let desti=segue.destination as!DetailViewController
+        desti.movie=movie
+    }
     @IBOutlet weak var LoadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var FlixTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        LoadingIndicator.layer.zPosition=500
-        FlixTable.layer.zPosition=1
-        self.LoadingIndicator.startAnimating()
+        //LoadingIndicator.layer.zPosition=500
+        //FlixTable.layer.zPosition=1
+        //self.LoadingIndicator.startAnimating()
         let refreshControl=UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControlEvents.valueChanged)
         FlixTable.insertSubview(refreshControl, at: 0)
@@ -72,7 +79,7 @@ class NowPlayingViewController: UIViewController,UITableViewDataSource {
     
 
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
-        LoadingIndicator.stopAnimating()
+        //LoadingIndicator.stopAnimating()
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
