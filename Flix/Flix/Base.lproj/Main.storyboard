@@ -109,7 +109,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="inq-sx-fDB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inq-sx-fDB">
                                 <rect key="frame" x="36" y="422" width="323" height="225"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -222,11 +222,11 @@
             </objects>
             <point key="canvasLocation" x="701.60000000000002" y="756.97151424287858"/>
         </scene>
-        <!--Superhero-->
+        <!--Popular-->
         <scene sceneID="zqe-F9-bwE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="meT-tf-sqf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Superhero" image="superhero_tabbar_item" id="VhS-XK-RDc"/>
+                    <tabBarItem key="tabBarItem" title="Popular" image="superhero_tabbar_item" id="VhS-XK-RDc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="El1-sV-NWK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -247,6 +247,6 @@
         <image name="superhero_tabbar_item" width="21" height="23"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dbc-qh-t0K"/>
+        <segue reference="7gY-bO-K9r"/>
     </inferredMetricsTieBreakers>
 </document>

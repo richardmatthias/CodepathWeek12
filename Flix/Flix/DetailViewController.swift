@@ -23,22 +23,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var SsImageView: UIImageView!
     @IBOutlet weak var BgImageView: UIImageView!
     
-    var movie:[String:Any]?
+    var movie:Movie!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let movie=movie{
-            TitleLb.text=movie[MK.title]as?String
-            DateLb.text=movie[MK.date]as?String
-            DescLb.text=movie[MK.overview]as?String
-            let BgPath=movie[MK.bg]as!String
-            let SsPath=movie[MK.ss]as!String
-            let basePath="https://image.tmdb.org/t/p/w500"
-            
-            let BgURL=URL(string:basePath+BgPath)!
-            BgImageView.af_setImage(withURL: BgURL)
-            let SsURL=URL(string:basePath+SsPath)!
-            SsImageView.af_setImage(withURL: SsURL)
+            TitleLb.text=movie.title
+            DateLb.text=movie.date
+            DescLb.text=movie.overview
+            BgImageView.af_setImage(withURL: movie.bgUrl!)
+            SsImageView.af_setImage(withURL: movie.posterUrl!)
         }
         // Do any additional setup after loading the view.
     }
